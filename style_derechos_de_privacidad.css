@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1f1f1f; /* Fondo oscuro para mayor contraste */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px white;
+}
+
+h1, h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p, ul {
+    color: white;
+    line-height: 1.6;
+}
+
+ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer a {
+    color: peru;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+}
