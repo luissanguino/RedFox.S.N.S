@@ -25,6 +25,10 @@ header h1:hover{
     transition: transform 0.3s ease;
 }
 
+.header-icon {
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: auto;
+
 /* Estilo para la navegación */
 nav ul {
     list-style: none;    
