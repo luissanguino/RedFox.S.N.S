@@ -76,10 +76,12 @@ section {
     padding: 20px;
     margin: 20px;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;   
 }
-
+section:hover{
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box.shadow 0.3s ease;
+}
 section h2 {
     color: #ff6600;
     font-size: 2em;
