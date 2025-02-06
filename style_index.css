@@ -136,10 +136,7 @@ footer a:hover {
 
 /* Para pantallas pequeñas (teléfonos, menos de 600px) */
 @media (max-width: 600px) {
-    header {
-        flex-direction: column;  /* Cambia el encabezado para que los elementos se apilen */
-        padding: 10px;
-    }
+   
 
     .header-icon {
         width: 30%;  /* Hacer los iconos más pequeños en pantallas pequeñas */
