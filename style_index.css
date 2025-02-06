@@ -136,70 +136,156 @@ footer a:hover {
 
 /* Para pantallas pequeñas (teléfonos, menos de 600px) */
 @media (max-width: 600px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 5%;
+        background-color: #e7e5e5;
+        color: #333;
+        background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('Fondo.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+       
+        
+    }
+    
+    /* Estilo para el encabezado */
+    header {
+        display: block;        
+        background: linear-gradient(to right, #ff6600, #ff660021);
+        color: black;
+        padding: 4%;
+        text-align: left;     
+    }
+    .header-icon {   
+        align-self: center;
+        margin-left: 80%;
+        width: 15%;    
+        border: 1.5px solid #000;   
+    }
+    
+    .header-icon:hover{
+        transform: scale(2.1); 
+        transition: transform 0.3s ease;
+    
+    }
+    header h1 {    
+        margin-left: 4%;
+        font-size: 100%;   
+    }
+    
+    header h1:hover{
+         transform: scale(1.1); 
+        transition: transform 0.3s ease;    
+    }
+    
+    
+    
+    /* Estilo para la navegación */
+    nav ul {
+        padding: 0%;
+        margin: 1%;
+        text-align: left;                         
+    }
+
+    nav ul li a {        
+        color: black;                
+        font-size: 70%;
+    }
+    
+    nav ul li a:hover {    
+        border-radius: 2%;
+        padding: 0.01%;
+        box-shadow:0.1em 0.1em 0.1em #333;
+        border: 0.001em solid rgb(0, 0, 0);
+        transition: box-shadow 0.3s ease, border-radius 0.3s ease;
+       
+    }
+    
+    /* Estilo para las secciones */
+    section {
+        font-size: 40%;
+        padding: 2%;
+        margin: 2%;
+        background-color: white;
+        border-radius: 0.5em;   
+        background: linear-gradient(to right, #fffefe, #cfcac671);    
+              
+    }
+    
+    section p{
+        font-size: 70%;
+        color: rgb(10, 10, 10);
+        
+    }
+    
+    section:hover{    
+       transition: box-shadow 0.3s ease;
+       transform: scale(1.02); 
+       transition: transform 0.5s ease;  
+       
+       
+    }
+    
+    section h2 {
+        color: #ff6600;
+        font-size: 2em;
+    }
+    
+    #contacto a{
+        color: #ff6600;
+        text-decoration: none;
+        
+    } 
+    
+    /* Estilo del pie de página */
+    footer {
+        
+        color: white;
+        text-align: center;
+        font-size: 50%;
+        padding: 0.1%;    
+        position: relative;   
+        width: 100%;
+        
+    }
+    
+    footer a {
+        color: #ff6600;
+        text-decoration: none;
+    }
+    
+    footer a:hover {
+        text-decoration: underline;
+    }
    
 
-    .header-icon {
-        width: 30%;  /* Hacer los iconos más pequeños en pantallas pequeñas */
-    }
-
-    header h1 {
-        font-size: 150%;  /* Reduce el tamaño del texto */
-    }
-
-    nav ul {
-        text-align: center;
-    }
-
-    nav ul li {
-        display: block;  /* Los elementos de la navegación se apilan */
-        margin: 10px 0;
-    }
-
-    section {
-        font-size: 90%;  /* Aumentar el tamaño de la fuente para móviles */
-        padding: 5%;
-        margin: 5%;
-    }
-
-    footer {
-        font-size: 70%;  /* Asegurarse de que el pie de página sea más pequeño */
-    }
 }
-
 /* Para pantallas medianas (tabletas, entre 600px y 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
-    header h1 {
-        font-size: 180%;  /* Ajustar el tamaño del encabezado */
-    }
+    
 
-    .header-icon {
-        width: 20%;  /* Ajustar tamaño de los iconos */
-    }
-
-    nav ul li {
-        margin: 0 1em;
-    }
-
-    section {
-        font-size: 80%;  /* Ajustar tamaño de la fuente */
-    }
 }
 
 /* Para pantallas grandes (más de 1024px) */
 @media (min-width: 1025px) {
-    body {
-        padding: 5%;
+    
+    header{
+        font-size: 150%;
     }
+    
+section{
 
-    header {
-        padding: 4% 2%;
-    }
+    font-size: 100%;
+}
 
-    section {
-        font-size: 70%;  /* Ajustar el tamaño para pantallas grandes */
-    }
+footer{
 
-    footer {
-        font-size: 80%;
-    }
+    font-size: 150%;
+}
+
 }
