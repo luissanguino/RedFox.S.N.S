@@ -14,17 +14,16 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      # Paso 2: Copiar los archivos necesarios
+      # Paso 2: Copiar solo los archivos modificados
       - name: Copy new files to root
         run: |
-          cp -r * ./  # Copia los archivos a la raíz del repositorio
+          for file in *; do
+            if [ ! -e "./$file" ]; then
+              cp -r "$file" ./  # Copiar solo archivos que no existen ya en la raíz
+            fi
+          done
 
-      # Paso 3: Verificar si hay cambios antes de hacer commit
-      - name: Check for changes
-        run: |
-          git diff --exit-code || echo "Changes detected"
-
-      # Paso 4: Configuración de Git y despliegue (solo si hay cambios)
+      # Paso 3: Configuración de Git y despliegue (solo si hay cambios)
       - name: Deploy to GitHub Pages
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
