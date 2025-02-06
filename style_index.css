@@ -133,3 +133,76 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* Para pantallas pequeñas (teléfonos, menos de 600px) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;  /* Cambia el encabezado para que los elementos se apilen */
+        padding: 10px;
+    }
+
+    .header-icon {
+        width: 30%;  /* Hacer los iconos más pequeños en pantallas pequeñas */
+    }
+
+    header h1 {
+        font-size: 150%;  /* Reduce el tamaño del texto */
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;  /* Los elementos de la navegación se apilan */
+        margin: 10px 0;
+    }
+
+    section {
+        font-size: 90%;  /* Aumentar el tamaño de la fuente para móviles */
+        padding: 5%;
+        margin: 5%;
+    }
+
+    footer {
+        font-size: 70%;  /* Asegurarse de que el pie de página sea más pequeño */
+    }
+}
+
+/* Para pantallas medianas (tabletas, entre 600px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 180%;  /* Ajustar el tamaño del encabezado */
+    }
+
+    .header-icon {
+        width: 20%;  /* Ajustar tamaño de los iconos */
+    }
+
+    nav ul li {
+        margin: 0 1em;
+    }
+
+    section {
+        font-size: 80%;  /* Ajustar tamaño de la fuente */
+    }
+}
+
+/* Para pantallas grandes (más de 1024px) */
+@media (min-width: 1025px) {
+    body {
+        padding: 5%;
+    }
+
+    header {
+        padding: 4% 2%;
+    }
+
+    section {
+        font-size: 70%;  /* Ajustar el tamaño para pantallas grandes */
+    }
+
+    footer {
+        font-size: 80%;
+    }
+}
