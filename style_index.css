@@ -25,13 +25,10 @@ header {
     padding: 20px 0;
     text-align: center;     
 }
-.header-icon {
-   
+.header-icon {   
     align-self: center;
-    width: 150px; 
-   
-    border: 2px solid #000;
-   
+    width: 150px;    
+    border: 2px solid #000;   
 }
 
 .header-icon:hover{
@@ -41,7 +38,7 @@ header {
 }
 header h1 {    
     margin: 0;
-    font-size: 2.5em;   
+    font-size: 2.8em;   
 }
 
 header h1:hover{
