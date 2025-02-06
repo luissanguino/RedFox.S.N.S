@@ -14,10 +14,14 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      # Paso 2: (Opcional) Copiar los archivos a la raíz del repositorio
-      - name: Copy files to root
+      # Paso 2: Evitar copiar los archivos que ya existen
+      - name: Copy new files to root (avoid duplicates)
         run: |
-          cp -r * ./  # Copiar todos los archivos a la raíz del repositorio
+          for file in *; do
+            if [ ! -e "./$file" ]; then
+              cp -r "$file" ./  # Copiar solo archivos que no existen ya
+            fi
+          done
 
       # Paso 3: Configuración de Git y despliegue
       - name: Deploy to GitHub Pages
