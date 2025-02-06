@@ -14,20 +14,25 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      # Paso 2: Evitar copiar los archivos que ya existen
-      - name: Copy new files to root (avoid duplicates)
+      # Paso 2: Copiar los archivos necesarios
+      - name: Copy new files to root
         run: |
-          for file in *; do
-            if [ ! -e "./$file" ]; then
-              cp -r "$file" ./  # Copiar solo archivos que no existen ya
-            fi
-          done
+          cp -r * ./  # Copia los archivos a la raíz del repositorio
 
-      # Paso 3: Configuración de Git y despliegue
+      # Paso 3: Verificar si hay cambios antes de hacer commit
+      - name: Check for changes
+        run: |
+          git diff --exit-code || echo "Changes detected"
+
+      # Paso 4: Configuración de Git y despliegue (solo si hay cambios)
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.name 'GitHub Actions'  # Nombre del commit
-          git config --global user.email 'actions@github.com'  # Correo del commit
-          git add -A  # Añadir todos los archivos modificados
-          git commit -m "Deployed with GitHub Actions"  # Crear un commit con el mensaje
-          git push origin main  # Enviar los cambios a la rama 'main'
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config --global user.name 'GitHub Actions'  # Nombre del commit
+            git config --global user.email 'actions@github.com'  # Correo del commit
+            git add -A  # Añadir todos los archivos modificados
+            git commit -m "Deployed with GitHub Actions"  # Crear un commit con el mensaje
+            git push origin main  # Enviar los cambios a la rama 'main'
+          else
+            echo "No changes to commit"
+          fi
