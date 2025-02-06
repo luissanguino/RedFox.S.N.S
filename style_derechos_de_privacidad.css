@@ -3,7 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 5%;
-    color: #333;
+    background-color: white;
+    color: #fffafa;
     background-image: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('Fondo.jpg');
@@ -15,29 +16,10 @@ body {
     
 }
 
-/* Estilo para el encabezado */
-body {
+body div h1{
+    background-color:#ff6600c7;
     background: linear-gradient(to right, #ff6600, #ff660021);
-    color: black;
-    padding: 4%;
-    text-align: left;     
 }
-.header-icon {   
-    align-self: center;
-    width: 15%;    
-    border: 1.5px solid #000;   
-}
-
-.header-icon:hover{
-    transform: scale(1.1); 
-    transition: transform 0.3s ease;
-
-}
-body h1 {    
-    margin: 0;
-    font-size: 200%;   
-}
-
 
 nav ul li {
     display: inline-block;   
@@ -93,7 +75,7 @@ section h2 {
 /* Estilo del pie de página */
 footer {
     
-    color: rgb(0, 0, 0);
+    color: rgb(255, 251, 251);
     text-align: right;
     font-size: 80%;
     padding: 0.1%;    
