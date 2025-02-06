@@ -22,7 +22,7 @@ header {
     justify-content: space-around;
     background: linear-gradient(to right, #ff6600, #ff660021);
     color: black;
-    padding: 4% 0;
+    padding: 4%;
     text-align: center;     
 }
 .header-icon {   
@@ -56,7 +56,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;   
+    display: inline-block;   
     margin: 0 0.5em;     
      
 }
