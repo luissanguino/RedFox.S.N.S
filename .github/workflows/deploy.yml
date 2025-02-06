@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Se ejecuta al hacer un push a la rama 'main' (puedes cambiarla si es otra)
+      - main  # Se ejecuta al hacer un push a la rama 'main'
 
 jobs:
   build:
@@ -14,25 +14,17 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      # Paso 2: (Opcional) Configuración de Node.js, si usas herramientas de build (puedes omitirlo si no es necesario)
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'  # Usar la versión de Node.js que prefieras (si usas Node.js)
+      # Paso 2: Copiar los archivos a la carpeta root (si es necesario)
+      - name: Copy files to root
+        run: |
+          mkdir -p ./root  # Crea la carpeta 'root' (si aún no existe)
+          cp -r * ./root/  # Copia todos los archivos a la carpeta 'root'
 
-      # Paso 3: (Opcional) Instalar dependencias si usas npm o algo similar
-      - name: Install dependencies
-        run: npm install  # O omitir si no usas npm
-
-      # Paso 4: (Opcional) Construir el sitio, solo si usas algún generador como Hugo, Jekyll o Webpack
-      - name: Build site
-        run: npm run build  # Reemplázalo por el comando adecuado si usas algún generador de sitio estático
-
-      # Paso 5: Configuración de Git y despliegue
+      # Paso 3: Configuración de Git y despliegue
       - name: Deploy to GitHub Pages
         run: |
           git config --global user.name 'GitHub Actions'  # Nombre del commit
           git config --global user.email 'actions@github.com'  # Correo del commit
           git add -A  # Añadir todos los archivos modificados
           git commit -m "Deployed with GitHub Actions"  # Crear un commit con el mensaje
-          git push origin main  # Enviar los cambios a la rama 'main' (o la que uses para GitHub Pages)
+          git push origin main  # Enviar los cambios a la rama 'main'
