@@ -3,27 +3,36 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # o la rama que uses
+      - main  # Se ejecuta al hacer un push a la rama 'main' (puedes cambiarla si es otra)
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # El entorno de ejecución es Ubuntu
 
     steps:
+      # Paso 1: Clonar el repositorio
       - name: Check out repository
         uses: actions/checkout@v2
-      
+
+      # Paso 2: (Opcional) Configuración de Node.js, si usas herramientas de build (puedes omitirlo si no es necesario)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
-      
-      - name: Build and Deploy
+          node-version: '14'  # Usar la versión de Node.js que prefieras (si usas Node.js)
+
+      # Paso 3: (Opcional) Instalar dependencias si usas npm o algo similar
+      - name: Install dependencies
+        run: npm install  # O omitir si no usas npm
+
+      # Paso 4: (Opcional) Construir el sitio, solo si usas algún generador como Hugo, Jekyll o Webpack
+      - name: Build site
+        run: npm run build  # Reemplázalo por el comando adecuado si usas algún generador de sitio estático
+
+      # Paso 5: Configuración de Git y despliegue
+      - name: Deploy to GitHub Pages
         run: |
-          npm install
-          npm run build  # o el comando que uses para generar tu sitio
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add -A
-          git commit -m "Deployed with GitHub Actions"
-          git push origin main  # o la rama de producción
+          git config --global user.name 'GitHub Actions'  # Nombre del commit
+          git config --global user.email 'actions@github.com'  # Correo del commit
+          git add -A  # Añadir todos los archivos modificados
+          git commit -m "Deployed with GitHub Actions"  # Crear un commit con el mensaje
+          git push origin main  # Enviar los cambios a la rama 'main' (o la que uses para GitHub Pages)
