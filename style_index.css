@@ -289,3 +289,21 @@ footer{
 }
 
 }
+/* Para pantallas grandes (más de 1424px) */
+@media (min-width: 1425px) {
+    
+    header{
+        font-size: 250%;
+    }
+    
+section{
+
+    font-size: 150%;
+}
+
+footer{
+
+    font-size: 200%;
+}
+
+}
