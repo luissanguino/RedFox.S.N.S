@@ -267,7 +267,19 @@ footer a:hover {
 }
 /* Para pantallas medianas (tabletas, entre 600px y 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
+    header{
+        font-size: 90%;
+    }
     
+section{
+
+    font-size: 50%;
+}
+
+footer{
+
+    font-size: 70%;
+}
 
 }
 
@@ -293,17 +305,17 @@ footer{
 @media (min-width: 1425px) {
     
     header{
-        font-size: 250%;
+        font-size: 150%;
     }
     
 section{
 
-    font-size: 150%;
+    font-size: 100%;
 }
 
 footer{
 
-    font-size: 200%;
+    font-size: 150%;
 }
 
 }
