@@ -14,11 +14,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      # Paso 2: Copiar los archivos a la carpeta root (si es necesario)
+      # Paso 2: (Opcional) Copiar los archivos a la raíz del repositorio
       - name: Copy files to root
         run: |
-          mkdir -p ./root  # Crea la carpeta 'root' (si aún no existe)
-          cp -r * ./root/  # Copia todos los archivos a la carpeta 'root'
+          cp -r * ./  # Copiar todos los archivos a la raíz del repositorio
 
       # Paso 3: Configuración de Git y despliegue
       - name: Deploy to GitHub Pages
